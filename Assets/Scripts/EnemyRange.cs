@@ -7,6 +7,7 @@ public class EnemyRange : Enemy
     public GameObject bullet;
 
     public GameObject spawn;
+    public BoolVariable readyToRestart;
 
     protected override void Start()
     {
@@ -29,7 +30,7 @@ public class EnemyRange : Enemy
     {
         yield return new WaitForSeconds(0.5f);
 
-        while (!gameManager.readyToRestart)
+        while (player != null)
         {
             Shoot();
             yield return new WaitForSeconds(1f);

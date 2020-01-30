@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056334975186456495}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1227398301424793818}
   - component: {fileID: 1227398301424793760}
   - component: {fileID: 4739400782905700337}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyRange
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -250,11 +250,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8fc3577256114748b2f4ab24eb27228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pv: 1
   speed: 5
   explosion: {fileID: 6960139520119692550, guid: 59e7d8d97a720f048bcd88020b5881e1,
     type: 3}
+  score: {fileID: 11400000, guid: 46323997417a7dc4cb6337cb290dd26e, type: 2}
   bullet: {fileID: 6284892261310567487, guid: 05b4f5f2fe110384aa97a63c89e78081, type: 3}
   spawn: {fileID: 426484262162580473}
+  readyToRestart: {fileID: 0}
 --- !u!1 &2374437606440067448
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +270,7 @@ GameObject:
   - component: {fileID: 6784213315328921357}
   - component: {fileID: 7382225223366698845}
   - component: {fileID: 3893754154070055598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

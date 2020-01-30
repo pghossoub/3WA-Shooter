@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7475679841759633940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpawnBullet2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4793920402560855026}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpawnBullet3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6497627356637426605}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpawnBullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4082331696445675972}
   - component: {fileID: 6314513787884242680}
   - component: {fileID: 1934526713340859181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nose (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 5751739474373873513}
   - component: {fileID: 5751739474373873427}
   - component: {fileID: 951841183452335740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyTurret
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -406,16 +406,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef269718a44dff4dbd2c84e70e98c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   explosion: {fileID: 6960139520119692550, guid: 59e7d8d97a720f048bcd88020b5881e1,
     type: 3}
+  score: {fileID: 11400000, guid: 46323997417a7dc4cb6337cb290dd26e, type: 2}
   bullet: {fileID: 6284892261310567487, guid: 05b4f5f2fe110384aa97a63c89e78081, type: 3}
   spawn: {fileID: 0}
+  readyToRestart: {fileID: 0}
   spawns:
   - {fileID: 6571312599689655370}
   - {fileID: 2776308573245994079}
   - {fileID: 1122080603872963345}
   - {fileID: 1730370475214568921}
+  step: 2
 --- !u!1 &5935125403158644962
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +431,7 @@ GameObject:
   - component: {fileID: 2875538465256834809}
   - component: {fileID: 887285226466652933}
   - component: {fileID: 8770586324210289866}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nose (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +524,7 @@ GameObject:
   - component: {fileID: 3022612525996004436}
   - component: {fileID: 2649093785959475558}
   - component: {fileID: 8239300944219409252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nose (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4779235169494202396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +647,7 @@ GameObject:
   - component: {fileID: 71088664923732158}
   - component: {fileID: 4082581683478548718}
   - component: {fileID: 7553579009112419613}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

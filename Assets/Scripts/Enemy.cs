@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float pv = 1;
     public float speed = 10f;
     public GameObject explosion;
 
+    public FloatVariable score;
+
     private AudioSource explodeSound;
-    private bool dead = false;
-    protected GameManager gameManager;
+    private bool isDead = false;
 
     protected GameObject player;
     protected Rigidbody rb;
@@ -19,10 +21,8 @@ public class Enemy : MonoBehaviour
         explodeSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
     protected virtual void Update()
     {
         Move();
@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Move()
     {
+        //calculate rotation: towards Player
+
         Vector3 playerPosition = player.transform.position;
         Vector3 enemyPosition = transform.position;
         Vector3 direction = (playerPosition - enemyPosition);
@@ -38,25 +40,30 @@ public class Enemy : MonoBehaviour
         lookRotation.x = 0;
         lookRotation.z = 0;
 
-        //transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 1f);
-        //rb.AddForce(transform.rotation * Vector3.forward * speed);
         transform.rotation = lookRotation;
 
+        //Move forward
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (!dead)
+        if (!isDead)
         {
             if (collision.gameObject.tag == "PlayerBullet")
             {
-                dead = true;
-                gameManager.addScore();
-                explodeSound.Play();
-                Instantiate(explosion, transform.position, transform.rotation);
-                //wait for the sound to play
-                Destroy(gameObject, 0.05f);
+                if (pv <= 1)
+                { 
+                    isDead = true;
+                    score.value += 1f;
+                    explodeSound.Play();
+                    Instantiate(explosion, transform.position, transform.rotation);
+                    Destroy(gameObject, 0.05f);
+                }
+                else
+                {
+                    pv--;
+                }
             }
 
             if (collision.gameObject.tag == "EnemyBullet")
@@ -64,16 +71,6 @@ public class Enemy : MonoBehaviour
 
                 Destroy(collision.gameObject);
             }
-
-            /*
-            if (collision.gameObject.tag == "Player")
-            {
-                explodeSound.Play();
-                Destroy(player);
-                gameManager.readyToRestart = true;
-                gameManager.GameOver();
-            }
-            */
         }
     }
 }

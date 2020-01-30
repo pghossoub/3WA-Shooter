@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        /*if(!collision.gameObject.CompareTag("PlayerBullet") && 
+            !collision.gameObject.CompareTag("EnemyBullet"))*/
         Destroy(gameObject);
     }
 }

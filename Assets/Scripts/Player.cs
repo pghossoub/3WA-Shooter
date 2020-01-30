@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
     public GameObject spawn;
     public GameObject explosion;
 
+    public BoolVariable playerIsHit;
+
     private AudioSource explodeSound;
     private Rigidbody rb;
-    private GameManager gameManager;
-
     private float nextFire;
 
     void Awake()
@@ -25,16 +25,13 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         explodeSound = GetComponent<AudioSource>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         nextFire = 0f;
     }
 
     void Update()
     {
      
-        Vector3 direction = Vector3.zero;
-
-        direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         rb.velocity = direction * speed * Time.deltaTime;
 
@@ -59,22 +56,12 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "EnemyBullet")
+        if (collision.gameObject.CompareTag ("EnemyBullet") || collision.gameObject.CompareTag("Enemy"))
         {
             explodeSound.Play();
             Instantiate(explosion, transform.position, transform.rotation);
             //wait for the sound to play
-            gameManager.GameOver();
-            gameManager.readyToRestart = true;
-            Destroy(gameObject, 0.05f);
-        }
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            explodeSound.Play();
-            Instantiate(explosion, transform.position, transform.rotation);
-            gameManager.readyToRestart = true;
-            gameManager.GameOver();
+            playerIsHit.value = true;
             Destroy(gameObject, 0.05f);
         }
     }

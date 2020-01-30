@@ -5,12 +5,19 @@ using UnityEngine;
 public class EnemyTurret : EnemyRange
 {
     public GameObject[] spawns;
+    public float step;
 
     private Vector3 randomDirection = Vector3.right;
     private bool randomBehavior = true;
 
     protected override void Start()
     {
+        Quaternion currentRotation = transform.rotation;
+        currentRotation = Random.rotation;
+        currentRotation.x = 0;
+        currentRotation.z = 0;
+        transform.rotation = currentRotation;
+
         base.Start();
 
         StartCoroutine(chooseBehavior());
@@ -28,20 +35,24 @@ public class EnemyTurret : EnemyRange
 
     protected override void Move()
     {
-        if (!randomBehavior) {
+
+        if (!randomBehavior)
+        {
             //normal move
-            /*Vector3 playerPosition = player.transform.position;
+            Vector3 playerPosition = player.transform.position;
             Vector3 enemyPosition = transform.position;
             Vector3 direction = (playerPosition - enemyPosition);
-            transform.Translate(direction * Time.deltaTime * speed);
-            */
-
-            base.Move();
+            //Quaternion rotationTarget = Quaternion.LookRotation(direction, Vector3.up);
+            //Quaternion.RotateTowards(transform.rotation, rotationTarget, step);
+            //transform.rotation = rotationTarget;
+            transform.Translate(direction.normalized * Time.deltaTime * speed, Space.World);
         }
 
-        else
-        //Random move
-        transform.Translate(randomDirection * Time.deltaTime * speed);
+        else 
+        {
+            //Random move
+            transform.Translate(randomDirection * Time.deltaTime * speed, Space.World);
+        }
     }
 
     IEnumerator chooseBehavior()
@@ -53,7 +64,7 @@ public class EnemyTurret : EnemyRange
             else
                 randomBehavior = true;
 
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(2.0f);
         }
     }
 
