@@ -7,7 +7,7 @@ public class EnemyRange : Enemy
     public GameObject bullet;
 
     public GameObject spawn;
-    public BoolVariable readyToRestart;
+    //public BoolVariable readyToRestart;
 
     protected override void Start()
     {

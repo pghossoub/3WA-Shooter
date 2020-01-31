@@ -222,7 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pv: 1
   speed: 7
-  explosion: {fileID: 6960139520119692550, guid: 59e7d8d97a720f048bcd88020b5881e1,
+  bounceTime: 0.1
+  deathExplosion: {fileID: 6960139520119692550, guid: 59e7d8d97a720f048bcd88020b5881e1,
+    type: 3}
+  dmgExplosion: {fileID: 1527713811759183605, guid: 4b0d00a291e89bf478a2c90d62a32f21,
     type: 3}
   score: {fileID: 11400000, guid: 46323997417a7dc4cb6337cb290dd26e, type: 2}
 --- !u!1 &188152337568708768

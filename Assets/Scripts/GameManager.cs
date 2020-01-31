@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemys;
     public GameObject gameOverPanel;
     public GameObject scorePanel;
+    public GameObject spawnLight;
     public Text highScoreDisplay;
 
     public FloatVariable score;
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         scoreText = scorePanel.GetComponentInChildren<Text>();
 
-        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnLight());
     }
     void Update()
     {
@@ -47,17 +48,28 @@ public class GameManager : MonoBehaviour
 
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnLight()
     {
-        while (!readyToRestart.value) 
+        while (!readyToRestart.value)
         {
             yield return new WaitForSeconds(1.0f);
             int spawnNumber = Random.Range(0, enemySpawns.Length);
-            int enemyNumber = Random.Range(0, enemys.Length);
-            Instantiate(enemys[enemyNumber], enemySpawns[spawnNumber].transform.position, Quaternion.identity);
+            Instantiate(spawnLight, enemySpawns[spawnNumber].transform.position, Quaternion.identity);
+            StartCoroutine(SpawnEnemy(enemySpawns[spawnNumber].transform.position));
             //Debug.Log("Spawn!");
         }
     }
+
+    IEnumerator SpawnEnemy(Vector3 position)
+    {
+        
+        yield return new WaitForSeconds(1.0f);
+        int enemyNumber = Random.Range(0, enemys.Length);
+        Instantiate(enemys[enemyNumber], position, Quaternion.identity);
+        
+    }
+
+    
 
     public void GameOver()
     {

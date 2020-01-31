@@ -6,12 +6,15 @@ public class Enemy : MonoBehaviour
 {
     public float pv = 1;
     public float speed = 10f;
-    public GameObject explosion;
+    public float bounceTime = 0.1f;
+    public GameObject deathExplosion;
+    public GameObject dmgExplosion;
 
     public FloatVariable score;
 
     private AudioSource explodeSound;
     private bool isDead = false;
+    private float nextDamage;
 
     protected GameObject player;
     protected Rigidbody rb;
@@ -50,14 +53,16 @@ public class Enemy : MonoBehaviour
     {
         if (!isDead)
         {
-            if (collision.gameObject.tag == "PlayerBullet")
+            if (collision.gameObject.tag == "PlayerBullet" && Time.time > nextDamage)
             {
+                nextDamage = Time.time + bounceTime;
+                Instantiate(dmgExplosion, collision.gameObject.transform.position, transform.rotation);
                 if (pv <= 1)
                 { 
                     isDead = true;
                     score.value += 1f;
                     explodeSound.Play();
-                    Instantiate(explosion, transform.position, transform.rotation);
+                    Instantiate(deathExplosion, transform.position, transform.rotation);
                     Destroy(gameObject, 0.05f);
                 }
                 else

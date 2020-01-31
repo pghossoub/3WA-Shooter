@@ -406,8 +406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef269718a44dff4dbd2c84e70e98c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pv: 3
   speed: 2
-  explosion: {fileID: 6960139520119692550, guid: 59e7d8d97a720f048bcd88020b5881e1,
+  bounceTime: 0.1
+  deathExplosion: {fileID: 6960139520119692550, guid: 59e7d8d97a720f048bcd88020b5881e1,
+    type: 3}
+  dmgExplosion: {fileID: 1527713811759183605, guid: 4b0d00a291e89bf478a2c90d62a32f21,
     type: 3}
   score: {fileID: 11400000, guid: 46323997417a7dc4cb6337cb290dd26e, type: 2}
   bullet: {fileID: 6284892261310567487, guid: 05b4f5f2fe110384aa97a63c89e78081, type: 3}

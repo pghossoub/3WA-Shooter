@@ -322,6 +322,8 @@ MonoBehaviour:
   - {fileID: 5751739474373873512, guid: 9359fac41b9ee0349a870588916ced8c, type: 3}
   gameOverPanel: {fileID: 343134981}
   scorePanel: {fileID: 1715489601}
+  spawnLight: {fileID: 4236263470894668126, guid: 887718b3453dedb47a6d47607762a5da,
+    type: 3}
   highScoreDisplay: {fileID: 175523781}
   score: {fileID: 11400000, guid: 46323997417a7dc4cb6337cb290dd26e, type: 2}
   highScore: {fileID: 11400000, guid: e663cc62d599a9945a9cb004e45e3799, type: 2}
@@ -793,7 +795,7 @@ PrefabInstance:
     - target: {fileID: 5751739474373873512, guid: 9359fac41b9ee0349a870588916ced8c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5751739474373873517, guid: 9359fac41b9ee0349a870588916ced8c,
         type: 3}
@@ -1781,7 +1783,7 @@ PrefabInstance:
     - target: {fileID: 1227398301424793819, guid: de27b977f60b7114a8b0cc11f23a8de2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1227398301424793822, guid: de27b977f60b7114a8b0cc11f23a8de2,
         type: 3}
@@ -1996,7 +1998,7 @@ PrefabInstance:
     - target: {fileID: 188152336622095443, guid: 00fca0fab7e0ae94284e352e4c835a56,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 188152336622095446, guid: 00fca0fab7e0ae94284e352e4c835a56,
         type: 3}
@@ -2060,12 +2062,6 @@ PrefabInstance:
       objectReference: {fileID: 2091059444}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fca0fab7e0ae94284e352e4c835a56, type: 3}
---- !u!1 &613626473782008964 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6571312599689655370, guid: 9359fac41b9ee0349a870588916ced8c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6031999924315465934}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1359949929380706046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2147,11 +2143,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTurret
       objectReference: {fileID: 0}
-    - target: {fileID: 5751739474373873512, guid: 9359fac41b9ee0349a870588916ced8c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5751739474373873517, guid: 9359fac41b9ee0349a870588916ced8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2206,22 +2197,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 951841183452335740, guid: 9359fac41b9ee0349a870588916ced8c,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 6284892261310567487, guid: 05b4f5f2fe110384aa97a63c89e78081,
-        type: 3}
-    - target: {fileID: 951841183452335740, guid: 9359fac41b9ee0349a870588916ced8c,
-        type: 3}
-      propertyPath: spawn
-      value: 
-      objectReference: {fileID: 613626473782008964}
-    - target: {fileID: 951841183452335740, guid: 9359fac41b9ee0349a870588916ced8c,
-        type: 3}
-      propertyPath: speed
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9359fac41b9ee0349a870588916ced8c, type: 3}
