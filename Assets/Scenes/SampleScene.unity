@@ -316,10 +316,6 @@ MonoBehaviour:
   - {fileID: 1336948410}
   - {fileID: 114396050}
   - {fileID: 670759166}
-  enemys:
-  - {fileID: 188152336622095443, guid: 00fca0fab7e0ae94284e352e4c835a56, type: 3}
-  - {fileID: 1227398301424793819, guid: de27b977f60b7114a8b0cc11f23a8de2, type: 3}
-  - {fileID: 5751739474373873512, guid: 9359fac41b9ee0349a870588916ced8c, type: 3}
   gameOverPanel: {fileID: 343134981}
   scorePanel: {fileID: 1715489601}
   spawnLight: {fileID: 4236263470894668126, guid: 887718b3453dedb47a6d47607762a5da,
@@ -329,6 +325,10 @@ MonoBehaviour:
   highScore: {fileID: 11400000, guid: e663cc62d599a9945a9cb004e45e3799, type: 2}
   playerIsHit: {fileID: 11400000, guid: 7347d47aa931dc647bb1edae2c7f2f49, type: 2}
   readyToRestart: {fileID: 11400000, guid: 559759bdd98be654a9c2d590103005ad, type: 2}
+  levels:
+  - {fileID: 11400000, guid: 4cc587ba755dc6c4392b61d5f0f16b8c, type: 2}
+  - {fileID: 11400000, guid: e9ba0f2c1e2d8ca43908102222686b2e, type: 2}
+  - {fileID: 11400000, guid: aa8497297dec017429cd1bdcd23dd4dd, type: 2}
 --- !u!4 &105617443
 Transform:
   m_ObjectHideFlags: 0

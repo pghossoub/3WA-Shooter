@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
             if (collision.gameObject.tag == "PlayerBullet" && Time.time > nextDamage)
             {
                 nextDamage = Time.time + bounceTime;
+
                 Instantiate(dmgExplosion, collision.gameObject.transform.position, transform.rotation);
                 if (pv <= 1)
                 { 
